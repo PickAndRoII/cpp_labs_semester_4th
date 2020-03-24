@@ -10,36 +10,36 @@ class DynArray{
         tablicy dzieki ktorej mozemy w latwy sposob wykonywac operacje 
         na elementach naszej tablicy*/
         class Iterator{
-        public:
-            /*Konstruktor klasy Iterator przyjmujacy wskaznik na typ
-            naszego kontenera*/
-            Iterator(T* ptr) : m_ptr(ptr){}
+            public:
+                /*Konstruktor klasy Iterator przyjmujacy wskaznik na typ
+                naszego kontenera*/
+                Iterator(T* ptr) : m_ptr(ptr){}
 
-            /*Operator nierownosci, zwracajacy boola, true jezeli
-            nierownosc jest prawdziwa, a false jezeli oba elementy
-            sa rowne */
-            bool operator!=(const Iterator& iter);
+                /*Operator nierownosci, zwracajacy boola, true jezeli
+                nierownosc jest prawdziwa, a false jezeli oba elementy
+                sa rowne */
+                bool operator!=(const Iterator& iter);
 
-            /*Operator preinkrementacji, zwiekszajacy nasz
-            wskaznik o 1 */
-            void operator++();
+                /*Operator preinkrementacji, zwiekszajacy nasz
+                wskaznik o 1 */
+                void operator++();
 
-            /*Operator *, ktory zwraca nam wartosc elementu
-            tablicy na ktorym operujemy */
-            T operator*();
+                /*Operator *, ktory zwraca nam wartosc elementu
+                tablicy na ktorym operujemy */
+                T operator*();
 
-            /*Operator ->, ktory zwraca nam adres do elementu,
-            na ktorym operujemy */
-            Iterator* operator->(){
-                return this;
-            }
+                /*Operator ->, ktory zwraca nam adres do elementu,
+                na ktorym operujemy */
+                Iterator* operator->(){
+                    return this;
+                }
 
-            /*Funkcja append, ktora przyjmuje wartosc i rozszerza 
-            o nia aktualny element tablicy*/
-            void append(const T str);
-            
-        private:
-            T* m_ptr;
+                /*Funkcja append, ktora przyjmuje wartosc i rozszerza 
+                o nia aktualny element tablicy*/
+                void append(const T str);
+
+            private:
+                T* m_ptr;
         };
 
         /*Konstruktor klasy DynArray przyjmujacy rozmiar tablicy 
